@@ -1,0 +1,23 @@
+.image_container {
+    filter: opacity(.68) drop-shadow(0 0 0 rgb(0, 10, 55, 0.7));
+    opacity: 0.6;
+    height: 25vw;
+    position: relative;
+    width: 80vw;
+}
+
+.image_cocktail {
+    width: auto;
+    height: 25vw;
+    display: inline-flex;
+    margin-inline: -1.5vw;
+}
+
+h3 {
+    padding: 3% 3% 0% 3%;
+}
+
+.description_text > p{
+    text-align: justify;
+    padding-top: 2%
+}

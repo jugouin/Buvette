@@ -13,5 +13,20 @@ body {
 h3 {
     color: #01164D;
     text-transform: uppercase;
+    font-size: calc(1.7vw + 1rem);
+    letter-spacing: 0.3rem;
+    word-spacing: 0.1rem;
+    text-wrap: nowrap;
 }
 
+p {
+    color: #F5EEDC;
+    font-size: calc(0.3vw + 1em); 
+    margin-bottom: 1.4rem;
+    padding: 6% 0% 4% 4%;
+}
+
+.border_style {
+    border-left: 2px solid #01104D;
+    border-bottom: 2px solid #01104D;
+}

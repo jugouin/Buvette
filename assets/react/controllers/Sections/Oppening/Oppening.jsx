@@ -11,17 +11,17 @@ export default function () {
             <div className="left_text">
                 <div>
                     <h3>Ouverture</h3>
-                    <p>Tous les jours de 8h à 22h<br/>
+                    <p className="border_style">Tous les jours de 8h à 22h<br/>
                     Soirée spéciale tous les vendredis</p>
                 </div>
                 <div>
                     <h3>Nous trouver</h3>
-                    <p>Route de la plage 125<br/>
+                    <p className="border_style">Route de la plage 125<br/>
                     1897 Port-Valais, Suisse</p>
                 </div>
                 <div>
                     <h3>Contact</h3>
-                    <p>Stéfanie Palmisano<br/>
+                    <p className="border_style">Stéfanie Palmisano<br/>
                     stefanie.palmisano@gmail.ch</p>
                 </div>
             </div>

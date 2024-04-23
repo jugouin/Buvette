@@ -22,6 +22,7 @@ h1 {
 }
 
 .subtitle_header {
+    padding: 0;
     color: #176B79;
     font-size: calc(5vw + 0.8em);
     margin: -20px 0 -20px 0;

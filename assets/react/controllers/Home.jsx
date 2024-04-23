@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header/Header';
 import Oppening from './Sections/Oppening/Oppening';
+import Description from './Sections/Description/Description';
 
 export default function () {
 
@@ -8,5 +9,6 @@ export default function () {
     return <div>
             <Header/>
             <Oppening/>
+            <Description/>
         </div>
 }

@@ -11,5 +11,6 @@ import './bootstrap.js';
 import './styles/app.css';
 import './react/controllers/Header/Header.css';
 import './react/controllers/Sections/Oppening/Oppening.css';
+import './react/controllers/Sections/Description/Description.css';
 
 registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));

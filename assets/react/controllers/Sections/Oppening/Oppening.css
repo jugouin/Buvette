@@ -1,4 +1,4 @@
-.container {
+.oppening_container {
     position: relative;
     width: 70vw;
     height: fit-content;
@@ -39,6 +39,7 @@
 .left_text > div > p {
     margin-top: -1rem;
     width: max-content;
+    font-size: calc(0.3vw + 1em);
 }
 
 .left_text > div >h3::first-letter {
@@ -60,11 +61,5 @@
     }
     .image_croissant {
         display: none;
-     /*   height: 60vh;
-        position: absolute;
-        left: 85.75%;
-        top: 7vw;
-        width: auto;
-        overflow: hidden;*/
     }
 }

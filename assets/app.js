@@ -12,5 +12,6 @@ import './styles/app.css';
 import './react/controllers/Header/Header.css';
 import './react/controllers/Sections/Oppening/Oppening.css';
 import './react/controllers/Sections/Description/Description.css';
+import './react/controllers/Sections/Friday_evenings/Evenings.css';
 
 registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));

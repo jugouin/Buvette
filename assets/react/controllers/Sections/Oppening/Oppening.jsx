@@ -5,7 +5,7 @@ export default function () {
 
 
     // breakpoints que les titres
-    return <div className="container">
+    return <div className="oppening_container">
         <div className="line line_oppening"></div>
         <div className="containt">
             <div className="left_text">

@@ -19,5 +19,17 @@ h3 {
 
 .description_text > p{
     text-align: justify;
-    padding-top: 2%
+    padding-top: 2%;
+    font-size: calc(0.3vw + 0.8em);
+}
+
+@media screen and (max-width: 768px) {
+    
+    .description_text {
+       border-bottom: none;
+    }
+
+    .description_text > p {
+        margin-bottom: 0;
+    }
 }

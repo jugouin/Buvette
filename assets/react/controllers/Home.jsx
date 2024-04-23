@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header/Header';
 import Oppening from './Sections/Oppening/Oppening';
 import Description from './Sections/Description/Description';
+import Evenings from './Sections/Friday_evenings/Evenings';
 
 export default function () {
 
@@ -10,5 +11,6 @@ export default function () {
             <Header/>
             <Oppening/>
             <Description/>
+            <Evenings/>
         </div>
 }

@@ -21,7 +21,7 @@ h3 {
 
 p {
     color: #F5EEDC;
-    font-size: calc(0.3vw + 1em); 
+    font-size: calc(0.3vw + 0.8em);
     margin-bottom: 1.4rem;
     padding: 6% 0% 4% 4%;
 }

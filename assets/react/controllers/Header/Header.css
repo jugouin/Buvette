@@ -1,7 +1,6 @@
 .header {
     position: relative;
     width: 70vw;
-    height: 90vw;
 }
 
 h1 {
@@ -16,20 +15,23 @@ h1 {
 }
 
 .subtitles {
-    position: absolute;
     max-width: 60vw;
     margin-left: 10vw;
-    overflow: hidden;
+    overflow-x: hidden;
     text-wrap: nowrap;
 }
 
 .subtitle_header {
     color: #176B79;
-    font-size: 5.7vw;
-    margin: -10px 0 -10px 0;
+    font-size: calc(5vw + 0.8em);
+    margin: -20px 0 -20px 0;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #01164D;
     text-overflow: ellipsis;
+}
+
+.subtitles:nth-of-type(1){
+    padding-top: 1.2em;
 }
 
 .subtitle_header:nth-child(n+2) {
@@ -48,11 +50,14 @@ h1 {
     margin-left: 160px;
 }
 
-.subtitle_header:nth-child(n+6) {
-    margin-left: 200px;
+.line_header {
+    height: 2px;
+    width: 31.5vw;
+    margin-top: 10%;
+    margin-left: 18.5vw;
 }
 
-.image {
+.image_header {
     filter: opacity(.68) drop-shadow(0 0 0 rgb(0, 10, 55, 0.7));
     opacity: 0.6;
     height: 40vw;

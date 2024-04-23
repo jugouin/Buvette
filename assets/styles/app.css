@@ -4,3 +4,14 @@ body {
     padding-right: 15vw;
     font-family: "Helvetica Neue", system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
+
+
+.line {
+    background-color: #01164d;
+}
+
+h3 {
+    color: #01164D;
+    text-transform: uppercase;
+}
+

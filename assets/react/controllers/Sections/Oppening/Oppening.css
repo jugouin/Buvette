@@ -1,0 +1,77 @@
+.container {
+    position: relative;
+    width: 70vw;
+    height: 70vh;
+    padding: 0;
+}
+
+.line_oppening {
+    position: absolute;
+    width: 2px;
+    height: 700px;
+    right: 10vw;
+}
+
+.image_croissant {
+    position: relative;
+    height: 40vw;
+    width: auto;
+    top: 10vh;
+}
+
+.containt {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left_text {
+    margin-top: calc(7vw + 1rem);
+}
+
+.left_text > div {
+    margin-left: 4vw;
+}
+
+.left_text > div > p {
+    border-bottom: 2px solid #01104D;
+    border-left: 2px solid #01104D;
+    color: #F5EEDC;
+    font-size: calc(0.3vw + 1em); 
+    margin-bottom: 1.4rem;
+    padding: 6% 8% 2% 4%;
+    margin-top: -1rem;
+    width: max-content;
+}
+
+.left_text > div >h3::first-letter {
+    font-size: calc(0.5vw + 2rem);
+}
+
+.left_text >div:nth-of-type(2) >p {
+    padding: 9% 7% 2% 4%;
+    margin-top: -1.9rem;
+}
+
+.left_text > div > h3 {
+    font-size: calc(1.7vw + 1rem);
+    margin-left: -0.7rem;
+    letter-spacing: 0.3rem;
+    word-spacing: 0.1rem;
+    text-wrap: nowrap;
+}
+
+@media screen and (max-width: 992px) {
+    .containt {
+        position: absolute;
+        width: 100%;
+    }
+    .image_croissant {
+        height: 60vh;
+        position: absolute;
+        left: 85.75%;
+        top: 7vw;
+        width: auto;
+        overflow: hidden;
+    }
+}

@@ -10,5 +10,6 @@ import './bootstrap.js';
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 import './react/controllers/Header/Header.css';
+import './react/controllers/Sections/Oppening/Oppening.css';
 
 registerReactControllerComponents(require.context('./react/controllers', true, /\.(j|t)sx?$/));

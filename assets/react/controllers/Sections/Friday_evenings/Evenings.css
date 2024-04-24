@@ -19,24 +19,22 @@
     justify-content: center;
 }
 
-.right_text > .articles > article > h3 {
+.right_text > .articles > article > h4 {
     text-align: center;
     letter-spacing: inherit;
     word-spacing: inherit;
-    padding: 13% 3% 0%;
+    padding: 5% 0%;
     margin: 0;
-    border-right: 2px solid #01104D;
-    border-bottom: 10px solid #01104D;
-    font-size: calc(1vw + 1rem);
+    border-right: 2px solid #01164D;
+    border-bottom: 10px solid #01164D;
 }
 
-.right_text > .articles > .reversed_article > h3 {
-    border-bottom: 2px solid #01104d;
-    border-top: 10px solid #01104d;
-    border-left: 2px solid #01104d;
+.right_text > .articles > .reversed_article > h4 {
+    border-bottom: 2px solid #01164D;
+    border-top: 10px solid #01164D;
+    border-left: 2px solid #01164D;
     border-right: 0;
-    padding: 0% 3% 13%;
-    font-size: calc(1vw + 1rem);
+    padding: 5% 0%;
 }
 
 
@@ -46,26 +44,26 @@
 }
 
 article > p {
-    color: #01104D;
-    border-left: 2px solid #01104D;
+    color: #01164D;
+    border-left: 2px solid #01164D;
     margin: 0;
     padding: 10% 5% 15% 5%;
  
 }
 
 .reversed_article > p {
-    border-right: 2px solid #01104D;
+    border-right: 2px solid #01164D;
     border-left: 0;
 }
 
 .reversed_article {
     transform: scaleY(-1);
-    border-top: 2px solid #01104D;
-    border-bottom: 2px solid #01104D;
+    border-top: 2px solid #01164D;
+    border-bottom: 2px solid #01164D;
 }
 
 .button {
-    background-color: #01104D;
+    background-color: #01164D;
     color: #F5EEDC;
     position: absolute;
     border: none;
@@ -101,12 +99,12 @@ article > p {
     }
 
     .responsive_line { 
-        background-color: #01104d;
+        background-color: #01164D;
         position: absolute;
         display: block;
         height: 2px;
-        width: 62vw;
-        left: 15vw;
+        width: 60vw;
+        left: 16.3vw;
     }
 
 }

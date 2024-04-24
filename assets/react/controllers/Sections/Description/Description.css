@@ -13,7 +13,8 @@
     margin-inline: -1.5vw;
 }
 
-h3 {
+.description_text > h3 {
+    margin-top: 0;
     padding: 3% 3% 0% 3%;
 }
 

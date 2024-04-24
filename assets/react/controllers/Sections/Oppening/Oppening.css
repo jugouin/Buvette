@@ -27,7 +27,7 @@
 }
 
 .left_text {
-    margin-top: calc(7vw + 1rem);
+    margin-top: calc(7vw + 3rem);
     margin-bottom: 3vw;
 }
 
@@ -37,22 +37,25 @@
 }
 
 .left_text > div > p {
-    margin-top: -1rem;
+    color: #F5EEDC;
     width: max-content;
     font-size: calc(0.3vw + 1em);
+    padding: 6% 4% 4% 4%;
+    position: relative;
 }
 
 .left_text > div >h3::first-letter {
-    font-size: calc(0.5vw + 2rem);
+    font-size: calc(01.3vw + 2rem);
 }
 
-.left_text >div:nth-of-type(2) >p {
-    padding: 9% 7% 2% 4%;
-    margin-top: -1.9rem;
+.left_text >div>h3:nth-of-type(2) >p {
+    margin-bottom: -0.8em;
 }
 
 .left_text > div > h3 {
-    margin-left: -0.7rem;
+    margin-left: -1rem;
+    margin-bottom: -0.5em;
+    position: relative;
 }
 
 @media screen and (max-width: 992px) {
@@ -61,5 +64,14 @@
     }
     .image_croissant {
         display: none;
+    }
+
+    .left_text > div > p {
+        padding: 6% 4% 4% 4%;
+        position: relative;
+    }    
+
+    .left_text >div:nth-of-type(2) >p {
+        margin-bottom: -0.8em;
     }
 }

@@ -1,7 +1,9 @@
 body {
     background-color: #176B79;
+    color: #01164D;
     padding-left: 15vw;
     padding-right: 15vw;
+    text-align: justify;
     font-family: "Helvetica Neue", system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
 
@@ -10,13 +12,19 @@ body {
     background-color: #01164d;
 }
 
-h3 {
-    color: #01164D;
+h3, h4 {
     text-transform: uppercase;
-    font-size: calc(1.7vw + 1rem);
+}
+
+h3 {
     letter-spacing: 0.3rem;
     word-spacing: 0.1rem;
     text-wrap: nowrap;
+}
+
+h4 {
+    text-wrap: wrap;
+    font-size: calc(1vw + 1rem);
 }
 
 p {
@@ -27,6 +35,6 @@ p {
 }
 
 .border_style {
-    border-left: 2px solid #01104D;
-    border-bottom: 2px solid #01104D;
+    border-left: 2px solid #01164D;
+    border-bottom: 2px solid #01164D;
 }

@@ -9,11 +9,11 @@ export default function () {
             <div className="right_text">
                 <div className="articles">
                     <article>
-                        <h3>Title Something</h3>
+                        <h4>Title Something</h4>
                         <p>Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                     </article>
                     <article className="reversed_article">
-                        <h3>Title Something</h3>
+                        <h4>Title Something</h4>
                         <p>Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>  
                     </article>
                 </div>

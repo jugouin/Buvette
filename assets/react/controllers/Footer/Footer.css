@@ -1,0 +1,47 @@
+.footer {
+    margin-top: 5%;
+    height: 5vw;
+}
+
+.bottom_footer {
+    background-color: #034459;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.img_footer {
+    height: 16vw;
+    margin-top: -16%;
+    position: absolute;
+    width: auto;
+}
+
+.bottom_footer > p {
+    color: #01164D;
+    padding: 2% 10%;
+    margin:0;
+}
+
+@media screen and (max-width: 992px) {
+
+    .img_footer {
+        left: 34%;
+    }
+
+    .footer {
+        margin: 0;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    .img_footer {
+        display: none;
+    }
+
+    .footer {
+        margin-top: -10%;
+    }
+}

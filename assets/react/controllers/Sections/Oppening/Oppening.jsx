@@ -15,14 +15,17 @@ export default function () {
                     Soirée spéciale tous les vendredis</p>
                 </div>
                 <div>
-                    <h3>Nous trouver</h3>
+                    <h3>Localisation</h3>
                     <p className="border_style">Route de la plage 125<br/>
                     1897 Port-Valais, Suisse</p>
                 </div>
                 <div>
                     <h3>Contact</h3>
-                    <p className="border_style">Stéfanie Palmisano<br/>
-                    stefanie.palmisano@gmail.ch</p>
+                    <p className="border_style">
+                        Stéfanie Palmisano<br/>
+                        +41 24 481 35 35<br/>
+                        stefanie.palmisano@gmail.com
+                    </p>
                 </div>
             </div>
             <img src={image} alt="Image" className='image_croissant' />

@@ -14,7 +14,7 @@
 
 .image_croissant {
     position: relative;
-    right: -5vw;
+    right: -3vw;
     height: 40vw;
     width: auto;
 }
@@ -27,7 +27,7 @@
 }
 
 .left_text {
-    margin-top: calc(7vw + 3rem);
+    margin-top: 14vw;
     margin-bottom: 3vw;
 }
 
@@ -40,16 +40,13 @@
     color: #F5EEDC;
     width: max-content;
     font-size: calc(0.3vw + 1em);
-    padding: 6% 4% 4% 4%;
+    padding: 5%;
+    margin-top: -2vh;
     position: relative;
 }
 
 .left_text > div >h3::first-letter {
     font-size: calc(01.3vw + 2rem);
-}
-
-.left_text >div>h3:nth-of-type(2) >p {
-    margin-bottom: -0.8em;
 }
 
 .left_text > div > h3 {
@@ -71,7 +68,4 @@
         position: relative;
     }    
 
-    .left_text >div:nth-of-type(2) >p {
-        margin-bottom: -0.8em;
-    }
 }

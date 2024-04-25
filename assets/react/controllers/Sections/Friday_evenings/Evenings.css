@@ -64,6 +64,7 @@ article > p {
 
 .button {
     background-color: #01164D;
+    font-size: larger;
     color: #F5EEDC;
     position: absolute;
     border: none;

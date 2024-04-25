@@ -3,6 +3,7 @@
     opacity: 0.6;
     height: 25vw;
     position: relative;
+    margin-left: -3vw;
     width: 80vw;
 }
 
@@ -14,8 +15,12 @@
 }
 
 .description_text > h3 {
-    margin-top: 0;
-    padding: 3% 3% 0% 3%;
+    margin: 0;
+    padding: 4% 0% 0% 4%;
+}
+
+.description_text >h3::first-letter {
+    font-size: calc(01.3vw + 2rem);
 }
 
 .description_text > p{

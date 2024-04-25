@@ -13,6 +13,7 @@
 }
 
 .image_croissant {
+    filter: brightness(0.85);
     position: relative;
     right: -3vw;
     height: 40vw;
@@ -27,8 +28,9 @@
 }
 
 .left_text {
-    margin-top: 14vw;
-    margin-bottom: 3vw;
+       margin-top: 4vw;
+       padding-top: 2vw;
+       border-left: 10px solid;
 }
 
 .left_text > div {
@@ -41,7 +43,7 @@
     width: max-content;
     font-size: calc(0.3vw + 1em);
     padding: 5%;
-    margin-top: -2vh;
+    margin-top: -1vh;
     position: relative;
 }
 

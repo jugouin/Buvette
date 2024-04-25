@@ -16,6 +16,10 @@ h3, h4 {
     text-transform: uppercase;
 }
 
+h4::first-letter {
+    font-size: calc(01.3vw + 2rem);
+}
+
 h3 {
     letter-spacing: 0.3rem;
     word-spacing: 0.1rem;
@@ -24,7 +28,7 @@ h3 {
 
 h4 {
     text-wrap: wrap;
-    font-size: calc(1vw + 1rem);
+    font-size: 1.4em;
 }
 
 p {
@@ -36,5 +40,5 @@ p {
 
 .border_style {
     border-left: 2px solid #01164D;
-    border-bottom: 2px solid #01164D;
+    border-bottom: 10px solid #01164D;
 }

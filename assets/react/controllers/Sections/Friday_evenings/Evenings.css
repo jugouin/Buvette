@@ -21,20 +21,28 @@
 
 .right_text > .articles > article > h4 {
     text-align: center;
-    letter-spacing: inherit;
-    word-spacing: inherit;
     padding: 5% 0%;
     margin: 0;
     border-right: 2px solid #01164D;
     border-bottom: 10px solid #01164D;
+    letter-spacing: .3rem;
+    text-wrap: nowrap;
+}
+
+.right_text > .articles > article >h4::first-letter {
+    font-size: calc(01.3vw + 2rem);
 }
 
 .right_text > .articles > .reversed_article > h4 {
     border-bottom: 2px solid #01164D;
     border-top: 10px solid #01164D;
-    border-left: 2px solid #01164D;
-    border-right: 0;
+    border-right: 2px solid #01164D;
+    border-left: 0;
     padding: 5% 0%;
+    margin: 0;
+    text-align: center;
+    letter-spacing: .3rem;
+    text-wrap: nowrap;
 }
 
 
@@ -52,12 +60,12 @@ article > p {
 }
 
 .reversed_article > p {
-    border-right: 2px solid #01164D;
-    border-left: 0;
+    border-right: 0;
+    border-left: 2px solid #01164D;
 }
 
 .reversed_article {
-    transform: scaleY(-1);
+    transform: scaleY(-1) scaleX(-1);
     border-top: 2px solid #01164D;
     border-bottom: 2px solid #01164D;
 }

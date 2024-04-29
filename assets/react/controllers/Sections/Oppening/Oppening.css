@@ -28,7 +28,7 @@
 }
 
 .left_text {
-       margin-top: 4vw;
+       margin-top: 5vw;
        padding-top: 2vw;
        border-left: 10px solid;
 }
@@ -45,6 +45,11 @@
     padding: 5%;
     margin-top: -1vh;
     position: relative;
+}
+
+.left_text > div > p > a {
+    color: inherit;
+    text-decoration: inherit;
 }
 
 .left_text > div >h3::first-letter {

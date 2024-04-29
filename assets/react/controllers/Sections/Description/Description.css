@@ -29,7 +29,7 @@
     font-size: calc(0.3vw + 0.8em);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     
     .description_text {
        border-bottom: none;

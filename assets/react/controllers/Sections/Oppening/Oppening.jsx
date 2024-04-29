@@ -3,8 +3,6 @@ import image from './img_croissant.jpeg';
 
 export default function () {
 
-
-    // breakpoints que les titres
     return <div className="oppening_container">
         <div className="line line_oppening"></div>
         <div className="containt">
@@ -23,8 +21,8 @@ export default function () {
                     <h3>Contact</h3>
                     <p className="border_style">
                         Stéfanie Palmisano<br/>
-                        +41 24 481 35 35<br/>
-                        stefanie.palmisano@gmail.com
+                        <a href="tel:+41 24 481 35 35">+41 24 481 35 35</a><br/>
+                        <a href="mailto:stefanie.palmisano@gmail.com">stefanie.palmisano@gmail.com</a>
                     </p>
                 </div>
             </div>

@@ -1,14 +1,14 @@
 import React from "react";
-import img_palms from './Palms.jpg';
-import img_closer_palms from './closer_palms.jpg';
+import footer_img_1 from './footer_img_1.png';
+import footer_img_2 from './footer_img_2.png';
 import logo from './icons8-facebook.svg';
 
 
 export default function () {
 
     return <div className="footer">
-            <img src={img_palms} alt="palm_image" className="img_palms"/>
-            <img src={img_closer_palms} alt="palm_image" className="img_closer_palms"/>
+            <img src={footer_img_1} alt="palm_image" className="footer_img_1"/>
+            <img src={footer_img_2} alt="palm_image" className="footer_img_2"/>
             <div className="bottom_footer">
                 <p>LA BUVETTE RIVE BLEUE</p>
                 <img src={logo} alt="Logo_Facebook" className="facebook_logo"/>

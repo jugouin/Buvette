@@ -1,32 +1,30 @@
 import React from "react";
-import image from './img_croissant.jpeg';
+import image from './img_croissant.png';
 
 export default function () {
 
     return <div className="oppening_container">
-        <div className="line line_oppening"></div>
-        <div className="containt">
-            <div className="left_text">
-                <div>
-                    <h3>Ouverture</h3>
-                    <p className="border_style">Tous les jours de 8h à 22h<br/>
-                    Soirée spéciale tous les vendredis</p>
-                </div>
-                <div>
-                    <h3>Localisation</h3>
-                    <p className="border_style">Route de la plage 125<br/>
-                    1897 Port-Valais, Suisse</p>
-                </div>
-                <div>
-                    <h3>Contact</h3>
-                    <p className="border_style">
-                        Stéfanie Palmisano<br/>
-                        <a href="tel:+41 24 481 35 35">+41 24 481 35 35</a><br/>
-                        <a href="mailto:stefanie.palmisano@gmail.com">stefanie.palmisano@gmail.com</a>
-                    </p>
-                </div>
+        <img src={image} alt="Image" className='oppening_img' />
+        <div className="oppening_text_section">
+            <div className="oppening_text_element">
+                <h3 className="oppening_text_title">Ouverture</h3>
+                <p className="oppening_text">Tous les jours de 8h à 22h<br/>
+                Soirée spéciale tous les vendredis</p>
             </div>
-            <img src={image} alt="Image" className='image_croissant' />
+            <div className="oppening_text_element">
+                <h3 className="oppening_text_title">Localisation</h3>
+                <p className="oppening_text">Route de la plage 125<br/>
+                1897 Port-Valais, Suisse</p>
+            </div>
+            <div className="oppening_text_element">
+                <h3 className="oppening_text_title">Contact</h3>
+                <p className="oppening_text">
+                    Stéfanie Palmisano<br/>
+                    <a href="tel:+41 24 481 35 35">+41 24 481 35 35</a><br/>
+                    <a href="mailto:stefanie.palmisano@gmail.com">stefanie.palmisano@gmail.com</a>
+                </p>
+            </div>
         </div>
+        
     </div>
 }

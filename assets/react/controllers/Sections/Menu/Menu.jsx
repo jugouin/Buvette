@@ -8,7 +8,11 @@ export default function () {
         <div className="menu_container">
             <div className="article">
                 <h4>Rafraîchissez-vous</h4>
-                <p>Découvrez notre sélection de boissons rafraîchissantes, cocktails, vins et bières de la région, accompagnées d'un choix de snacks savoureux et croquants. Parfait pour un moment détente au bord du lac Léman.</p>
+                <p>Découvrez notre sélection de boissons rafraîchissantes, cocktails, vins et bières de la région, accompagnées d'un choix de snacks savoureux et croquants. Parfait pour un moment détente au bord du lac Léman.
+                </p>
+                <div className="menu_button">
+                <button className="button">Voir la carte</button>
+            </div>
             </div>
             <img src={image} alt="Image" className='img_cocktail' />
         </div>

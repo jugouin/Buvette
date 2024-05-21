@@ -13,7 +13,7 @@ export default function () {
             </div>
             <div className="oppening_text_element">
                 <h3 className="oppening_text_title">Localisation</h3>
-                <p className="oppening_text">Route de la plage 125<br/>
+                <p className="oppening_text">Route de la plage 3<br/>
                 1897 Port-Valais, Suisse</p>
             </div>
             <div className="oppening_text_element">

@@ -1,0 +1,65 @@
+.form_reservation {
+    min-height: 94vh;
+    padding: 5% 5%;
+    background-color: var(--filter-opacity);
+    display: flex;
+}
+
+.form_element > {
+    padding-top: 3%;
+}
+
+.form_element > label {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form_element > label {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--small-font-size);
+    padding: 10px;
+    margin: 7px 10px 20px 10px;
+    position: relative;
+  }
+  
+
+.form_element > label::before {
+    border: var(--border-thin-style);
+    bottom: 20px;
+    content: "";
+    left: -10px;
+    position: absolute;
+    right: 25px;
+    top: -7px;
+    z-index: -1;
+}
+
+
+.form_element > label > input, textarea {
+    margin: 0;
+    height: 50px;
+    font-family: inherit;
+    font-size: var(--small-font-size);
+    background-color: var(--secondary-color);
+    color: white;
+    filter: opacity(0.5);
+    border: none;
+    line-height: inherit;
+}
+
+.form_left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.form_right {
+    width: 50%
+}
+
+.submit_btn {
+    position: absolute;
+    bottom: 20%;
+}

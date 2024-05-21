@@ -1,5 +1,5 @@
 import React from 'react';
-import image from './dw21-mynt-06.png'
+import image from './dw21-mynt-06.png';
 
 export default function () {
 

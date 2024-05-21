@@ -1,0 +1,55 @@
+.footer_container {
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -15vw;
+    width: calc(100% + 30vw);
+}
+
+.social_network_link{
+    margin-right: 15%;
+    display: flex;
+}
+
+.social_network_link > a {
+    padding-inline: 3%;
+}
+
+.fb_logo, .insta_logo, .login {
+    height: 35px;
+}
+
+.footer_container > p {
+    color:#034459;
+    font-weight: 600;
+    padding: 2% 15%;
+    margin:0;
+}
+
+
+
+@media screen and (max-width: 992px) {
+
+    .footer_homepage {
+        margin: 0;
+    }
+
+    .footer_img_1 {
+        display: block;
+        width: 100vw;
+        margin-left: -15vw;
+        margin-top: -50vw;
+    }
+
+    .footer_img_2{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .footer_homepage {
+        margin-top: -10%;
+    }
+}

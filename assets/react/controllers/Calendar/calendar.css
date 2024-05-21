@@ -1,0 +1,67 @@
+.calendar-wrapper {
+   border: var(--border-thin-style);
+}
+  
+.calendar-wrapper .calendar-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px 0px 25px;
+    justify-content: space-between;
+}
+
+.calendar-header .icons{
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+}
+
+.calendar {
+    padding: 20px;
+}
+
+.calendar > ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;
+}
+  
+.weeks > li{
+    font-weight: 500;
+}
+  
+.calendar > ul > li {
+    position: relative;
+    width: calc(100% / 7);
+}
+  
+.days > li {
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 30px;
+}
+  
+.days > li.inactive{
+    color: var(--secondary-color);
+    filter: opacity(0.3);
+}
+  
+.days > li.active{
+    color: white;
+    background-color: var(--secondary-color);
+}
+  
+
+  
+.days > li.active::before {
+    border: var(--secondary-color);
+}
+  
+.icons {
+    z-index: 1;
+}
+  
+  

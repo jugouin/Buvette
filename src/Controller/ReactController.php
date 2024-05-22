@@ -19,4 +19,10 @@ class ReactController extends AbstractController
         return $this->render('react/reservation.html.twig');
     }
 
+    #[Route('/admin', name: 'admin', methods:['GET'])]
+    public function admin(): Response
+    {
+        return $this->render('react/admin.html.twig');
+    }
+
 }

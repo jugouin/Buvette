@@ -1,0 +1,7 @@
+.reservationTable {
+    background-color: var(--secondary-color);
+    filter: var(--filter-opacity);
+}
+th {
+    font-weight: bold;
+}

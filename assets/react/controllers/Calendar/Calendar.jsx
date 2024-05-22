@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 import "./calendar.css";
 
 export default function Calendar() {
@@ -6,6 +10,7 @@ export default function Calendar() {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const currentDateRef = useRef(null);
   const daysTagRef = useRef(null);
+  const [open, setOpen] = useState(false);
 
   const months = [
     "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
@@ -62,6 +67,10 @@ export default function Calendar() {
     });
   };
 
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <div className="calendar-wrapper">
       <div className="calendar-header">
@@ -72,7 +81,23 @@ export default function Calendar() {
         </div>
       </div>
       <div className="calendar">
-        <ul className="weeks">
+        <Button onClick={handleOpen}>Open modal</Button>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Text in a modal
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              </Typography>
+            </Box>
+          </Modal>
+          <ul className="weeks">
           <li>Lun</li>
           <li>Mar</li>
           <li>Mer</li>

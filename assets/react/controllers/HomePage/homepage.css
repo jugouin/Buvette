@@ -259,6 +259,9 @@ article > p {
 .footer_homepage {
     margin-top: 12%;
 }
+.footer_homepage > .footer_container {
+    bottom: auto;
+}
 
 .footer_img_1 {
     display: none;

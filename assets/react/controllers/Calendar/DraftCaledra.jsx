@@ -1,20 +1,35 @@
-function prevMonth (){
-    currentMonth = currentMonth -1;
-    switchMonth();
-}
+import React, { useState } from 'react';
 
-function nextMonth (){
-    currentMonth = currentMonth + 1;
-    switchMonth();
-}
+const FormWithSelect = () => {
+  const [selectedOption, setSelectedOption] = useState('');
 
-function switchMonth (){
-    if(currentMonth < 0  || currentMonth > 11) {
-        date = new Date(currentYear, currentMonth);
-        currentYear = date.getFullYear();
-        currentMonth = date.getMonth();
-    } else {
-        date = new Date();
-    }
-    renderCalendar();
-}
+  const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Traiter les données du formulaire ici
+    console.log('Option sélectionnée:', selectedOption);
+  };
+
+  const options = [];
+  for (let i = 1; i <= 20; i++) {
+    options.push(<option key={i} value={i}>{i}</option>);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Choisissez une option:
+        <select value={selectedOption} onChange={handleSelectChange}>
+          <option value="">Sélectionnez une option</option>
+          {options}
+        </select>
+      </label>
+      <button type="submit">Soumettre</button>
+    </form>
+  );
+};
+
+export default FormWithSelect;

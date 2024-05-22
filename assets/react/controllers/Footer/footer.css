@@ -1,10 +1,12 @@
 .footer_container {
+    position: absolute;
+    align-items: center;
     background-color: var(--secondary-color);
     display: flex;
-    align-items: center;
     justify-content: space-between;
     margin-left: -15vw;
-    width: calc(100% + 30vw);
+    width: 100%;
+    bottom: 0;
 }
 
 .social_network_link{
@@ -45,11 +47,19 @@
     .footer_img_2{
         display: none;
     }
+
+    .fb_logo, .insta_logo, .login {
+        height: 25px;
+    }
 }
 
 @media screen and (max-width: 768px) {
 
     .footer_homepage {
         margin-top: -10%;
+    }
+
+    .fb_logo, .insta_logo, .login {
+        height: 20px;
     }
 }

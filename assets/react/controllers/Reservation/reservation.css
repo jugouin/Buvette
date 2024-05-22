@@ -1,12 +1,26 @@
+.reservationPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100vh;
+}
+
 .form_reservation {
-    min-height: 94vh;
-    padding: 5% 5%;
+    height: auto;
+    padding: 5%;
     background-color: var(--filter-opacity);
     display: flex;
+    flex-direction: column;
+}
+
+.form_content {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .form_element > {
     padding-top: 3%;
+    margin: auto 0;
 }
 
 .form_element > label {
@@ -18,12 +32,20 @@
 .form_element > label {
     display: flex;
     flex-direction: column;
-    font-size: var(--small-font-size);
     padding: 10px;
-    margin: 7px 10px 20px 10px;
+    margin: 0px 10px 10px 10px;
     position: relative;
+}
+
+textarea {
+    min-height: 70px;
+    width: calc(100% + 30px);
+}
+
+input::placeholder, textarea::placeholder, option {
+    font-size: 14px;
+    color: white
   }
-  
 
 .form_element > label::before {
     border: var(--border-thin-style);
@@ -32,34 +54,69 @@
     left: -10px;
     position: absolute;
     right: 25px;
-    top: -7px;
+    top: 0px;
     z-index: -1;
 }
 
 
-.form_element > label > input, textarea {
+.form_right > .form_element > label::before {
+    right: -10px;
+}
+
+.form_element > label > input, textarea, select {
     margin: 0;
-    height: 50px;
-    font-family: inherit;
-    font-size: var(--small-font-size);
-    background-color: var(--secondary-color);
+    height: 40px;
     color: white;
+    background-color: var(--secondary-color);
     filter: opacity(0.5);
     border: none;
-    line-height: inherit;
 }
 
-.form_left {
+.form_left, .form_right{
+    position: relative;
     display: flex;
     flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
     width: 50%;
-}
-
-.form_right {
-    width: 50%
+    margin-bottom: 20px;
 }
 
 .submit_btn {
-    position: absolute;
-    bottom: 20%;
+    flex: 50%;
+    flex-basis: 100%;
+}
+
+.submit_btn > button {
+    position: relative;
+}
+.reservationPage > .footer_container {
+    position: relative;
+    width: calc(100% + 30vw);
+}
+
+@media screen and (max-width: 992px) {
+    .reservationPage > h3 {
+        align-items: center;
+    }
+
+    .form_content {
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .form_left, .form_right{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .form_left, .form_right{
+        width: 100%;
+    }
+    .form_reservation {
+        align-items: center;
+    }
 }

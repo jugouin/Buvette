@@ -1,5 +1,6 @@
 .calendar-wrapper {
    border: var(--border-thin-style);
+   margin-bottom: 2%;
 }
   
 .calendar-wrapper .calendar-header {
@@ -17,7 +18,7 @@
 }
 
 .calendar {
-    padding: 20px;
+    padding: 0 20px 20px;
 }
 
 .calendar > ul {
@@ -41,7 +42,7 @@
 .days > li {
     z-index: 1;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 10px;
 }
   
 .days > li.inactive{
@@ -64,4 +65,9 @@
     z-index: 1;
 }
   
-  
+@media screen and (max-width: 768px) {
+
+    .days > li {
+        margin-top: 15px;
+    }
+}

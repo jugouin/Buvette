@@ -6,9 +6,9 @@ import "./reservation.css";
 
 
 export default function () {
-  return <div>
-    <h3>Réserver votre table</h3>
+  return <div className="reservationPage">
     <img src={image} alt="backgroundImage" className='background_img' />
+    <h3>Réserver votre table</h3>
     <ReservationForm/>
     <Footer/>
   </div>

@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reservations{% endblock %}
+
+{% block body %}
+    <div {{ react_component('Admin/Admin' , {'reservations': reservations_json }) }}></div>
+{% endblock %}

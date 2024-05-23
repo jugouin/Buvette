@@ -51,7 +51,7 @@
 }
   
 .days > li.active{
-    color: white;
+    color: var(--accent-color);
     background-color: var(--secondary-color);
 }
   

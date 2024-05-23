@@ -1,12 +1,11 @@
 .footer_container {
-    position: absolute;
+    position: relative;
     align-items: center;
     background-color: var(--secondary-color);
     display: flex;
     justify-content: space-between;
     margin-left: -15vw;
-    width: 100%;
-    bottom: 0;
+    width: 143%;
 }
 
 .social_network_link{

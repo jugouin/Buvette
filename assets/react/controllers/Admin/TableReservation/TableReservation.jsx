@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
@@ -13,45 +12,13 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import "./tableReservation.css";
+import { format } from 'date-fns';
+ 
 
-function createData(date, nbResa, nbMenu) {
-  return {
-    date,
-    nbResa,
-    nbMenu,
-    reservations: [
-      {
-        firstName: 'Marie',
-        lastName: 'Chatelet',
-        phone: +33782672308,
-        adults: 4,
-        children: 2,
-        menu: 6,
-      },
-      {
-        firstName: 'Alain',
-        lastName: 'Dupont',
-        phone: +33782672308,
-        adults: 4,
-        children: 2,
-        menu: 6,
-      },
-      {
-        firstName: 'Alain',
-        lastName: 'Dupont',
-        phone: +33782672308,
-        adults: 4,
-        children: 2,
-        menu: 6,
-      },
-    ],
-  };
-}
+function Row({reservation, date, persons, menu}) {
 
-function Row(props) {
-  const { row } = props;
   const [open, setOpen] = useState(false);
+  const formattedDate = format(new Date(date), 'dd/MM/yyyy');
 
   return (
     <React.Fragment>
@@ -66,42 +33,41 @@ function Row(props) {
           </IconButton>
         </TableCell>
         <TableCell component="th" scope="row">
-          {row.date}
+          {formattedDate}
         </TableCell>
-        <TableCell align="right">{row.nbResa}</TableCell>
-        <TableCell align="right">{row.nbMenu}</TableCell>
+        <TableCell align="right">{reservation.length}</TableCell>
+        <TableCell align="right">{persons}</TableCell>
+        <TableCell align="right">{menu}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
               <Typography variant="h6" gutterBottom component="div">
-                Réservation du {row.date}
+                Réservation du {formattedDate}
               </Typography>
               <Table size="small" aria-label="purchases">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Prénom</TableCell>
-                        <TableCell>Nom</TableCell>
-                        <TableCell>Téléphone</TableCell>
-                        <TableCell align="right">Adulte(s)</TableCell>
-                        <TableCell align="right">Enfant(s)</TableCell>
-                        <TableCell align="right">Menu(s)</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold' }}>Prénom</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold' }}>Nom</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold' }}>Téléphone</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold' }} align="right">Adulte(s)</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold' }} align="right">Enfant(s)</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold' }} align="right">Menu(s)</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                  {row.reservations.map((reservation) => (
-                    <TableRow key={reservation.date}>
-                      <TableCell component="th" scope="row">
-                        {reservation.firstName}
-                        </TableCell>
-                        <TableCell>{reservation.lastName}</TableCell>
-                        <TableCell>{reservation.phone}</TableCell>
-                        <TableCell align="right">{reservation.adults}</TableCell>
-                        <TableCell align="right">{reservation.children}</TableCell>
-                        <TableCell align="right">{reservation.menu}</TableCell>
+                {reservation.map(( resa ) => 
+                    <TableRow key={resa.id}>
+                        <TableCell component="th" scope="row">{resa.firstName}</TableCell>
+                        <TableCell>{resa.lastName}</TableCell>
+                        <TableCell>{resa.phone}</TableCell>
+                        <TableCell align="right">{resa.adults}</TableCell>
+                        <TableCell align="right">{resa.children}</TableCell>
+                        <TableCell align="right">{resa.menu}</TableCell>
                     </TableRow>
-                  ))}
+                )}
                 </TableBody>
               </Table>
             </Box>
@@ -112,50 +78,39 @@ function Row(props) {
   );
 }
 
-Row.propTypes = {
-  row: PropTypes.shape({
-    nbResa: PropTypes.number.isRequired,
-    nbMenu: PropTypes.number.isRequired,
-    reservation: PropTypes.arrayOf(
-      PropTypes.shape({
-        firstName: PropTypes.string.isRequired,
-        lastName: PropTypes.string.isRequired,
-        phone: PropTypes.string.isRequired,
-        adults: PropTypes.number.isRequired,
-        children: PropTypes.number.isRequired,
-        menu: PropTypes.number.isRequired,
-      }),
-    ).isRequired,
-    date: PropTypes.string.isRequired,
-    nbResa: PropTypes.number.isRequired,
-    nbMenu: PropTypes.number.isRequired,
-  }).isRequired,
-};
+export default function CollapsibleTable({reservations}) {
 
-const rows = [
-  createData('2020-01-05', 15, 10),
-  createData('2020-01-05', 15, 10),
-  createData('2020-01-05', 15, 10),
-  createData('2020-07-05', 15, 10),
-  createData('2023-01-05', 15, 10),
-];
+    const dateReservation = reservations.reduce((acc, reservation) => {
+        const date = reservation.date.split('T')[0]; 
+        const existingEntry = acc.find(entry => entry.date === date);
+        if (existingEntry) {
+            existingEntry.reservation.push(reservation);
+            existingEntry.persons += reservation.adults + reservation.children;
+            existingEntry.menu += reservation.menu;
+        } else {
+            acc.push({ date, reservation: [reservation], persons: reservation.adults + reservation.children, menu: reservation.menu });
+        }
+        return acc;
+    }, []);
+    
 
-export default function CollapsibleTable() {
+    
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{ backgroundColor: '#01164d4d', height: '75vh', margin: 'auto initial', marginBottom: '20px' }}>
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell>Date de Réservation</TableCell>
-            <TableCell align="right">Réservations</TableCell>
-            <TableCell align="right">Nombre de Menu</TableCell>
+            <TableCell sx={{ fontWeight: 'bold' }}>Date de Réservation</TableCell>
+            <TableCell align="right" sx={{ fontWeight: 'bold' }}>Nombre de Réservations</TableCell>
+            <TableCell align="right" sx={{ fontWeight: 'bold' }}>Nombre de Personnes</TableCell>
+            <TableCell align="right" sx={{ fontWeight: 'bold' }}>Nombre de Menus</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <Row key={row.name} row={row} />
-          ))}
+            {dateReservation.map(({ date, reservation, persons, menu }) => (
+            <Row key={date} date={date} reservation={reservation} persons={persons} menu={menu}/>
+            ))}
         </TableBody>
       </Table>
     </TableContainer>

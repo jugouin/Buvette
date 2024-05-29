@@ -52,11 +52,15 @@
   
 .days > li.active{
     color: var(--accent-color);
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
+    border: var(--border-thin-style);
 }
-  
 
-  
+.days li.selected {
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
+}
+
 .days > li.active::before {
     border: var(--secondary-color);
 }

@@ -37,6 +37,9 @@ class Reservation
     #[ORM\Column]
     private ?int $menu = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $remarks = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -122,6 +125,18 @@ class Reservation
     public function setMenu(int $menu): static
     {
         $this->menu = $menu;
+
+        return $this;
+    }
+
+    public function getRemarks(): ?string
+    {
+        return $this->remarks;
+    }
+
+    public function setRemarks(?string $remarks): static
+    {
+        $this->remarks = $remarks;
 
         return $this;
     }

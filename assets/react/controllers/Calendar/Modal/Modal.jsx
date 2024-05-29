@@ -1,34 +1,46 @@
-import React from 'react';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 import "./Modal.css";
 
-export default function Modal(){
+const btn_style = {
+  color: 'rgb(1, 22, 77)',
+  marginTop: '20px',
+  border: '2px solid rgb(1, 22, 77)',
+};
+
+export default function BasicModal({evening, onDateSelect}) {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const dateCalendar = format(new Date(evening.date), 'dd');
+  const date = format(new Date(evening.date), 'EEEE dd MMMM', { locale: fr });
+
+  const handleDateSelect = () => {
+    onDateSelect(date); // Transmet la date formatée au formulaire parent
+    handleClose();
+  };
 
   return (
     <div>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-        </button>
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
+      <Button onClick={handleOpen}>{dateCalendar}</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className="modal_box" onClick={handleClose}>
+          <Typography id="modal-modal-title" variant="h6" component="h2" className="modal_title">{date}</Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>Menu proposé: {evening.menu}</Typography>
+          <Button sx={btn_style} onClick={handleDateSelect}>Sélectionnez</Button>
+        </Box>
+      </Modal>
     </div>
   );
 }

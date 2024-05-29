@@ -6,8 +6,8 @@ import Table from "./TableReservation/TableReservation";
 
 export default function Admin(props) {
 
-    const reservationssObject = Object.entries(props);
-    const [reservations, setReservations] = useState(JSON.parse(reservationssObject[0][1]));
+    const reservationsObject = Object.entries(props);
+    const [reservations, setReservations] = useState(JSON.parse(reservationsObject[0][1]));
     
     console.log(reservations)
     

@@ -15,7 +15,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 
 
 
-#[Route('/reservations')]
+#[Route('/reservation')]
 class ReservationController extends AbstractController
 {
     #[Route('/', name: 'app_reservation_index', methods: ['GET'])]
@@ -35,24 +35,17 @@ class ReservationController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_reservation_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/add', name: 'app_reservation_new', methods: ['POST'])]
+    public function add(Request $request, EntityManagerInterface $entityManager, SerializerInterface $serializer): Response
     {
-        $reservation = new Reservation();
-        $form = $this->createForm(ReservationType::class, $reservation);
-        $form->handleRequest($request);
+        $data = $request->getContent();
+        echo($data);
+        $newReservation = $serializer->deserialize($data, Reservation::class, 'json');
+        
+        $entityManager->persist($newReservation);
+        $entityManager->flush();
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($reservation);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('app_reservation_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->render('reservation/new.html.twig', [
-            'reservation' => $reservation,
-            'form' => $form,
-        ]);
+        return new Response();
     }
 
     #[Route('/{id}', name: 'app_reservation_show', methods: ['GET'])]

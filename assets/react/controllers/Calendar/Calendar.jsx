@@ -1,75 +1,90 @@
 import React, { useState, useEffect, useRef } from "react";
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import ModalReservation from './Modal/Modal';
 import "./calendar.css";
 
-export default function Calendar() {
+export default function Calendar({ evening, onDateChange }) {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+  const [selectedDate, setSelectedDate] = useState(null);
   const currentDateRef = useRef(null);
-  const daysTagRef = useRef(null);
-  const [open, setOpen] = useState(false);
 
   const months = [
     "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
     "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
   ];
 
-  const renderCalendar = () => {
+  // Créez une liste de dates des soirées disponibles
+  const eveningDates = evening.map(event => new Date(event.date).toDateString());
+
+  const handleDateSelect = (date) => {
+    setSelectedDate(date);
+    onDateChange(date);
+  };
+
+  const renderDays = () => {
     const date = new Date();
     const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
     const lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     const lastDayOfMonth = new Date(currentYear, currentMonth, lastDateOfMonth).getDay();
     const lastDateOfLastMonth = new Date(currentYear, currentMonth, 0).getDate();
 
-    let liTag = "";
+    const days = [];
 
     for (let i = firstDayOfMonth; i > 0; i--) {
-      liTag += `<li class="inactive">${lastDateOfLastMonth - i + 1}</li>`;
+      days.push(
+        <li key={`prev-${i}`} className="inactive">
+          {lastDateOfLastMonth - i + 1}
+        </li>
+      );
     }
 
     for (let i = 1; i <= lastDateOfMonth; i++) {
-      let isToday = i === date.getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear() ? "active" : "";
-      liTag += `<li class="${isToday}">${i}</li>`;
+      const currentDate = new Date(currentYear, currentMonth, i).toDateString();
+      const isSelectable = eveningDates.includes(currentDate); // Vérifiez si la date est une date de soirée disponible
+
+      const isToday = i === date.getDate() && currentMonth === date.getMonth() && currentYear === date.getFullYear();
+      const isSelected = selectedDate && selectedDate.getFullYear() === currentYear && selectedDate.getMonth() === currentMonth && selectedDate.getDate() === i;
+      const dayClass = `${isToday ? "active" : ""} ${isSelected ? "selected" : ""} ${isSelectable ? "selectable" : ""}`;
+
+      days.push(
+        <li key={i} className={dayClass} onClick={() => isSelectable && handleDateSelect(new Date(currentYear, currentMonth, i))}>
+          {isSelectable ? <ModalReservation evening={evening.find(event => new Date(event.date).getDate() === i)} onDateSelect={handleDateSelect}/> : i}
+        </li>
+      );
     }
 
     for (let i = lastDayOfMonth; i < 6; i++) {
-      liTag += `<li class="inactive">${i - lastDayOfMonth + 1}</li>`;
+      days.push(
+        <li key={`next-${i}`} className="inactive">
+          {i - lastDayOfMonth + 1}
+        </li>
+      );
     }
 
-    if (currentDateRef.current) {
-      currentDateRef.current.innerHTML = `${months[currentMonth]} ${currentYear}`;
-    }
-    if (daysTagRef.current) {
-      daysTagRef.current.innerHTML = liTag;
-    }
+    return days;
   };
 
   useEffect(() => {
-    renderCalendar();
+    if (currentDateRef.current) {
+      currentDateRef.current.innerHTML = `${months[currentMonth]} ${currentYear}`;
+    }
   }, [currentYear, currentMonth]);
 
   const prevMonth = () => {
-    setCurrentMonth((prev) => {
+    setCurrentMonth(prev => {
       const newMonth = prev === 0 ? 11 : prev - 1;
-      setCurrentYear((prevYear) => (prev === 0 ? prevYear - 1 : prevYear));
+      setCurrentYear(prevYear => (prev === 0 ? prevYear - 1 : prevYear));
       return newMonth;
     });
   };
 
   const nextMonth = () => {
-    setCurrentMonth((prev) => {
+    setCurrentMonth(prev => {
       const newMonth = prev === 11 ? 0 : prev + 1;
-      setCurrentYear((prevYear) => (prev === 11 ? prevYear + 1 : prevYear));
+      setCurrentYear(prevYear => (prev === 11 ? prevYear + 1 : prevYear));
       return newMonth;
     });
   };
-
-
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   return (
     <div className="calendar-wrapper">
@@ -81,23 +96,7 @@ export default function Calendar() {
         </div>
       </div>
       <div className="calendar">
-        <Button onClick={handleOpen}>Open modal</Button>
-          <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-          >
-            <Box>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Text in a modal
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </Typography>
-            </Box>
-          </Modal>
-          <ul className="weeks">
+        <ul className="weeks">
           <li>Lun</li>
           <li>Mar</li>
           <li>Mer</li>
@@ -106,7 +105,9 @@ export default function Calendar() {
           <li>Sam</li>
           <li>Dim</li>
         </ul>
-        <ul ref={daysTagRef} className="days"></ul>
+        <ul className="days">
+          {renderDays()}
+        </ul>
       </div>
     </div>
   );

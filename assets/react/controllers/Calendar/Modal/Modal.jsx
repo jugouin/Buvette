@@ -9,9 +9,9 @@ import "./Modal.css";
 
 const btn_style = {
   color: 'rgb(1, 22, 77)',
-  marginTop: '20px',
   border: '2px solid rgb(1, 22, 77)',
-};
+  padding:'0',
+}
 
 export default function BasicModal({evening, onDateSelect}) {
   const [open, setOpen] = React.useState(false);
@@ -22,13 +22,13 @@ export default function BasicModal({evening, onDateSelect}) {
   const date = format(new Date(evening.date), 'EEEE dd MMMM', { locale: fr });
 
   const handleDateSelect = () => {
-    onDateSelect(date); // Transmet la date formatée au formulaire parent
+    onDateSelect(date);
     handleClose();
   };
 
   return (
     <div>
-      <Button onClick={handleOpen}>{dateCalendar}</Button>
+      <Button sx={{ minWidth: 'inherit', padding: 'inherit' }} onClick={handleOpen}>{dateCalendar}</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -37,7 +37,7 @@ export default function BasicModal({evening, onDateSelect}) {
       >
         <Box className="modal_box" onClick={handleClose}>
           <Typography id="modal-modal-title" variant="h6" component="h2" className="modal_title">{date}</Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>Menu proposé: {evening.menu}</Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2, mb: 2 }}>Menu proposé: {evening.menu}</Typography>
           <Button sx={btn_style} onClick={handleDateSelect}>Sélectionnez</Button>
         </Box>
       </Modal>

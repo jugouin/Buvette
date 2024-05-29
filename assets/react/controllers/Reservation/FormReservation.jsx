@@ -59,9 +59,8 @@ const ReservationForm = ({ evening }) => {
         axios
             .post(`https://127.0.0.1:8000/reservation/add`, formData)
             .then((res) => {
-                console.log(res);
-                console.log(res.data);
                 alert('Merci de votre réservation');
+                window.location = "https://localhost:8000/";
             })
             .catch((err) => {
                 console.log(err);
@@ -137,7 +136,7 @@ const ReservationForm = ({ evening }) => {
           </div>
         </div>
         <div className='form_right'>
-          <input type="text" value={selectedDate || null} readOnly style={{ display: 'none' }} />
+          <input type="text" value={selectedDate || ''} readOnly style={{ display: 'none' }} />
           <Calendar evening={evening} onDateChange={handleDateChange} />
           <div className="form_element">
             <label>

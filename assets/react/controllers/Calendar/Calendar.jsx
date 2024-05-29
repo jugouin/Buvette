@@ -23,9 +23,9 @@ export default function Calendar({ evening, onDateChange }) {
 
   const renderDays = () => {
     const date = new Date();
-    const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+    const firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
     const lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-    const lastDayOfMonth = new Date(currentYear, currentMonth, lastDateOfMonth).getDay();
+    const lastDayOfMonth = new Date(currentYear, currentMonth, lastDateOfMonth - 1).getDay();
     const lastDateOfLastMonth = new Date(currentYear, currentMonth, 0).getDate();
 
     const days = [];

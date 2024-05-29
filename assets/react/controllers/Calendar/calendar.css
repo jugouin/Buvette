@@ -1,6 +1,6 @@
 .calendar-wrapper {
    border: var(--border-thin-style);
-   margin-bottom: 2%;
+   margin-bottom: 20px;
 }
   
 .calendar-wrapper .calendar-header {
@@ -52,14 +52,23 @@
   
 .days > li.active{
     color: var(--accent-color);
+    font-weight: lighter;
     background-color: var(--primary-color);
-    border: var(--border-thin-style);
+    
+}
+
+.days li.selectable {
+    z-index: 1;
+    padding: 0;
+    background-color: rgb(1 22 77 / 40%);
 }
 
 .days li.selected {
-    background-color: var(--secondary-color);
-    color: var(--accent-color);
+    z-index: 1;
+    border: 2px solid rgb(1 22 77 / 60%);
+    color: var(--secondary-color);
 }
+
 
 .days > li.active::before {
     border: var(--secondary-color);

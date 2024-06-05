@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from '@symfony/ux-react';
 import image from './img_lake.png';
 
 export default function () {
@@ -18,7 +19,7 @@ export default function () {
                 <p>Venez déguster les menus du vendredi soir, puis laissez-vous emporter par les rythmes envoûtants d'un groupe de musique live surprise. Réservez dès maintenant pour ne pas manquer cette expérience unique !</p>
             </article>
             <div className="evening_button">
-                <a href={reservation_link} className="button">Réserver</a>
+                <a className="button"><Link to="reservation">Réserver</Link></a>
             </div>
         </div> 
     </div>

@@ -3,8 +3,6 @@ import { Link } from '@symfony/ux-react';
 import image from './img_lake.png';
 
 export default function () {
-    const appUrl = process.env.APP_URL;
-    const reservation_link = `${appUrl}/reservation`;
 
     return <div className="evening_container">
         <div className="responsive_line"></div>

@@ -3,7 +3,6 @@ import axios from 'axios';
 import Calendar from '../Calendar/Calendar';
 
 const ReservationForm = ({ evening }) => {
-    const appUrl = process.env.APP_URL;
     const [selectedDate, setSelectedDate] = useState(null);
     const [personNb, setPersonNb] = useState(0); // For handling nb menu regarding the number of person
     const [formData, setFormData] = useState({
@@ -58,10 +57,10 @@ const ReservationForm = ({ evening }) => {
         e.preventDefault();
         console.log(formData);
         axios
-            .post(`${appUrl}/reservation/add`, formData)
+            .post(`https://labuvetterivebleue-9a5a3f22297e.herokuapp.com/reservation/add`, formData)
             .then((res) => {
                 alert('Merci de votre réservation');
-                window.location = `${appUrl}`;
+                window.location = 'https://labuvetterivebleue-9a5a3f22297e.herokuapp.com';
             })
             .catch((err) => {
                 console.log(err);

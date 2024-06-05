@@ -16,7 +16,7 @@ export default function () {
                 <p>Venez déguster les menus du vendredi soir, puis laissez-vous emporter par les rythmes envoûtants d'un groupe de musique live surprise. Réservez dès maintenant pour ne pas manquer cette expérience unique !</p>
             </article>
             <div className="evening_button">
-                <a href="/admin" className="button">Réserver</a>
+                <a href="/reservation" className="button">Réserver</a>
             </div>
         </div> 
     </div>

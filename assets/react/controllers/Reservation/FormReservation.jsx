@@ -57,10 +57,10 @@ const ReservationForm = ({ evening }) => {
         e.preventDefault();
         console.log(formData);
         axios
-            .post(`https://127.0.0.1:8000/reservation/add`, formData)
+            .post(`https://labuvetterivebleue-9a5a3f22297e.herokuapp.com/reservation/add`, formData)
             .then((res) => {
                 alert('Merci de votre réservation');
-                window.location = "https://localhost:8000/";
+                window.location = "https://labuvetterivebleue-9a5a3f22297e.herokuapp.com/";
             })
             .catch((err) => {
                 console.log(err);

@@ -16,7 +16,7 @@ export default function () {
                 <p>Venez déguster les menus du vendredi soir, puis laissez-vous emporter par les rythmes envoûtants d'un groupe de musique live surprise. Réservez dès maintenant pour ne pas manquer cette expérience unique !</p>
             </article>
             <div className="evening_button">
-                <a href="https://127.0.0.1:8000/reservation" className="button">Réserver</a>
+                <a href="https://labuvetterivebleue-9a5a3f22297e.herokuapp.com/reservation" className="button">Réserver</a>
             </div>
         </div> 
     </div>

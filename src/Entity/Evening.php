@@ -5,9 +5,11 @@ namespace App\Entity;
 use App\Repository\EveningRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Table;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 #[Groups(['evening'])]
+#[Table('evening')]
 #[ORM\Entity(repositoryClass: EveningRepository::class)]
 class Evening
 {

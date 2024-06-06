@@ -5,9 +5,11 @@ namespace App\Entity;
 use App\Repository\ReservationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Table;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 #[Groups(['reservation'])]
+#[Table('reservation')]
 #[ORM\Entity(repositoryClass: ReservationRepository::class)]
 class Reservation
 {

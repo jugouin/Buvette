@@ -89,3 +89,21 @@ a {
         width: 100%;
     } 
 }
+
+@media (max-width: 480px) {
+
+    .containt {
+        width: 100%;
+    } 
+
+    body {
+        padding-left: 7vw;
+        padding-right: 7vw;
+    }
+
+    .background_img {
+        display: none;
+    }
+
+}
+

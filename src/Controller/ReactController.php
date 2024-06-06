@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\EveningRepository;
+use App\Repository\ReservationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -34,9 +35,18 @@ class ReactController extends AbstractController
     }
 
     #[Route('/admin', name: 'admin', methods:['GET'])]
-    public function admin(): Response
+    public function admin(ReservationRepository $reservationRepository, SerializerInterface $serializer): Response
     {
-        return $this->render('reservation/admin.html.twig');
+        $reservation_data = $reservationRepository->findAll();
+
+        $context = (new ObjectNormalizerContextBuilder())
+            ->withGroups('reservation')
+            ->toArray();
+
+        $reservation_json = $serializer->serialize($reservation_data, 'json', $context);
+        return $this->render('react/admin.html.twig', [
+            'reservation_json' => $reservation_json,
+        ]);
     }
 
 }

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+
+    {% if app.user %}
+        <div class="m-3">
+            <h1>Bonjour Stéfanie</h1>
+            <div class="d-flex flex-column">
+                <a class="text-decoration-none btn btn-outline-info p-2 px-4 m-2" href="{{ path('admin') }}">Voir les réservations</a>
+                <a class="text-decoration-none btn btn-outline-info p-2 px-4 m-2" href="{{ path('app_evening_new') }}">Créer un évènement</a>
+                <a class="text-decoration-none btn btn-outline-info p-2 px-4 m-2" href="{{ path('app_evening_index') }}">Voir les évènements</a>
+                <a class="text-decoration-none btn btn-outline-secondary p-2 px-4 m-2" href="{{ path('app_logout') }}">Se déconnecter</a>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

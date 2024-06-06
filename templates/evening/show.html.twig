@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Evènement{% endblock %}
+
+{% block body %}
+    {% if app.user %}
+    <h1>Evènement</h1>
+
+   <a href="{{ path('app_evening_index') }}" class="btn btn-outline-secondary my-4">Retour</a>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Date</th>
+                <td>{{ evening.date ? evening.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Menu</th>
+                <td>{{ evening.menu }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {{ include('evening/_delete_form.html.twig') }}
+    {% endif %}
+
+
+    <h3>Merci de bien vouloir vous connecter</h3>
+    <a href="{{ path('app_react') }}" class="btn btn-outline-info my-4">Se connecter</a>
+
+
+{% endblock %}

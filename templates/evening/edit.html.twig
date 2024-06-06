@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Evening{% endblock %}
+{% block title %}Modifier{% endblock %}
 
 {% block body %}
-    <h1>Edit Evening</h1>
+     {% if app.user %}
+    <h1>Modifier l'évènement</h1>
+    
+    <a class="btn btn-outline-secondary" href="{{ path('app_evening_index') }}">retour</a>
+    {{ include('evening/_form.html.twig', {'button_label': 'Modifier'}) }}
+     {% endif %}
 
-    {{ include('evening/_form.html.twig', {'button_label': 'Update'}) }}
+    {% if not app.user is defined %}
+    <h3>Merci de bien vouloir vous connecter</h3>
+    {% endif %}
 
-    <a href="{{ path('app_evening_index') }}">back to list</a>
-
-    {{ include('evening/_delete_form.html.twig') }}
 {% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Evènements{% endblock %}
+
+{% block body %}
+    {% if app.user %}
+    <h1>Evènements</h1>
+
+    <a href="{{ path('app_home') }}" class="btn btn-outline-secondary my-4">Retour</a>
+    
+    <table class="table table-light table-hover table-responsive rounded">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Menu</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for evening in evenings %}
+                <tr>
+                    <td>{{ evening.date|date('d M Y') }}</td>
+                    <td>{{ evening.menu }}</td>
+                    <td class="d-flex justify-content-end">
+                        <a href="{{ path('app_evening_edit', {'id': evening.id}) }}" class="btn btn-outline-warning m-1">
+                            <span class="material-symbols-outlined">edit</span>
+                        </a>
+                        <a href="{{ path('app_evening_delete', {'id': evening.id}) }}" class="btn btn-outline-danger m-1">
+                            <span class="material-symbols-outlined">delete</span>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr><td colspan="4">Aucun evening trouvé.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_evening_new') }}" class="btn btn-info">Ajouter un évènement</a>
+     {% endif %}
+
+    {% if not app.user is defined %}
+    <h3>Merci de bien vouloir vous connecter</h3>
+    {% endif %}
+
+{% endblock %}

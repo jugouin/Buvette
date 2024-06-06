@@ -3,9 +3,14 @@
 {% block title %}New Evening{% endblock %}
 
 {% block body %}
-    <h1>Create new Evening</h1>
+     {% if app.user %}
+        <h1>Créer un nouvel évènement</h1>
+        <a href="{{ path('app_home') }}" class="btn btn-outline-secondary my-4">Retour</a>
+        {{ include('evening/_form.html.twig') }}
+     {% endif %}
 
-    {{ include('evening/_form.html.twig') }}
+    {% if not app.user is defined %}
+    <h3>Merci de bien vouloir vous connecter</h3>
+    {% endif %}
 
-    <a href="{{ path('app_evening_index') }}">back to list</a>
 {% endblock %}

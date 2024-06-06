@@ -43,9 +43,9 @@ class ReactController extends AbstractController
             ->withGroups('reservation')
             ->toArray();
 
-        $reservation_json = $serializer->serialize($reservation_data, 'json', $context);
+        $reservations_json = $serializer->serialize($reservation_data, 'json', $context);
         return $this->render('react/admin.html.twig', [
-            'reservation_json' => $reservation_json,
+            'reservations_json' => $reservations_json,
         ]);
     }
 

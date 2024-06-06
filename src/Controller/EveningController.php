@@ -10,10 +10,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Serializer\Context\Normalizer\ObjectNormalizerContextBuilder;
+use Symfony\Component\Serializer\SerializerInterface;
 
 #[Route('/evening')]
 class EveningController extends AbstractController
 {
+    #[Route('/', name: 'app_evening_index', methods: ['GET'])]
+    public function index(EveningRepository $eveningRepository): Response
+    {
+        $evenings = $eveningRepository->findAll();
+
+        return $this->render('evening/index.html.twig', [
+            'evenings' => $evenings,
+        ]);
+    }
+
     #[Route('/new', name: 'app_evening_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -25,7 +37,7 @@ class EveningController extends AbstractController
             $entityManager->persist($evening);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_evening_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('evening/new.html.twig', [

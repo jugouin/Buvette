@@ -1,4 +1,11 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_start(form, {'attr': {'class': 'w-50 mx-auto'}}) }}
+    {% for child in form %}
+        {% if not loop.last %}
+            <div class="mb-2">
+                {{ form_label(child) }}
+                {{ form_widget(child, {'attr': {'class': 'form-control p-2'}}) }}
+            </div>
+        {% endif %}
+    {% endfor %}
+    <button class="btn btn-info">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

@@ -1,7 +1,7 @@
 .reservationPage {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: space-between;
     height: 100vh;
 }
 
@@ -26,12 +26,6 @@
 .form_element > label {
     display: flex;
     flex-direction: column;
-}
-
-
-.form_element > label {
-    display: flex;
-    flex-direction: column;
     padding: 10px;
     margin: 0px 10px 10px 10px;
     position: relative;
@@ -44,8 +38,8 @@ textarea {
 
 input::placeholder, textarea::placeholder, option {
     font-size: 14px;
-    color: var(--accent-color)
-  }
+    color: var(--accent-color);
+}
 
 .form_element > label::before {
     border: var(--border-thin-style);
@@ -58,22 +52,23 @@ input::placeholder, textarea::placeholder, option {
     z-index: -1;
 }
 
-
 .form_right > .form_element > label::before {
     right: -10px;
 }
 
-.form_element > label > input, textarea, select {
+.form_element > label > input, 
+.form_element > label > textarea, 
+.form_element > label > select {
     margin: 0;
     height: 40px;
     color: var(--accent-color);
     background-color: var(--secondary-color);
     filter: opacity(0.5);
     border: none;
-    border-radius: 0;
+    border-radius: 2px;
 }
 
-.form_left, .form_right{
+.form_left, .form_right {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -91,6 +86,7 @@ input::placeholder, textarea::placeholder, option {
 .submit_btn > button {
     position: relative;
 }
+
 .reservationPage > .footer_container {
     position: relative;
     width: calc(100% + 30vw);
@@ -107,14 +103,13 @@ input::placeholder, textarea::placeholder, option {
         flex-wrap: nowrap;
     }
 
-    .form_left, .form_right{
+    .form_left, .form_right {
         width: 100%;
     }
 }
 
 @media screen and (max-width: 768px) {
-
-    .form_left, .form_right{
+    .form_left, .form_right {
         width: 100%;
     }
     .form_reservation {

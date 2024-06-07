@@ -3,10 +3,12 @@
 namespace App\Entity;
 
 use App\Repository\EveningRepository;
+use Doctrine\DBAL\Types\BooleanType;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Table;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Twig\Node\Expression\Test\NullTest;
 
 #[Groups(['evening'])]
 #[Table('evening')]
@@ -26,6 +28,9 @@ class Evening
 
     #[ORM\Column(length: 50)]
     private ?string $music = null;
+
+    #[ORM\Column(type: Types::BOOLEAN)]
+    private ?bool $cancelled = false;
 
     public function getId(): ?int
     {
@@ -65,6 +70,17 @@ class Evening
     {
         $this->music = $music;
 
+        return $this;
+    }
+
+    public function getCancelled(): ?bool
+    {
+        return $this->cancelled;
+    }
+
+    public function setCancelled(string $cancelled): static
+    {
+        $this->cancelled = $cancelled;
         return $this;
     }
 }

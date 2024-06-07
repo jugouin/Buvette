@@ -24,6 +24,9 @@ class Evening
     #[ORM\Column(length: 50)]
     private ?string $menu = null;
 
+    #[ORM\Column(length: 50)]
+    private ?string $music = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -49,6 +52,18 @@ class Evening
     public function setMenu(string $menu): static
     {
         $this->menu = $menu;
+
+        return $this;
+    }
+
+    public function getMusic(): ?string
+    {
+        return $this->music;
+    }
+
+    public function setMusic(string $music): static
+    {
+        $this->music = $music;
 
         return $this;
     }

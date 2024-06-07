@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Evening;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,6 +17,14 @@ class EveningType extends AbstractType
                 'widget' => 'single_text',
             ])
             ->add('menu')
+            ->add('music', null, [
+                'label' => 'musique',
+            ])
+            ->add('cancelled', CheckboxType::class, [
+                'label'    => 'Soirée annulée',
+                'required' => false,
+                'data'     => false,
+            ])
         ;
     }
 

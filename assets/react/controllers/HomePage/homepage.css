@@ -1,5 +1,9 @@
 /* HEADER */
 
+.logo_header_container {
+    display: none;
+}
+
 .subtitles {
     max-width: 60vw;
     margin-left: 10vw;
@@ -367,12 +371,25 @@ article > p {
 
 @media screen and (max-width: 480px) {
 
-    .image_header,.subtitles {
+    .image_header,.subtitles, h1 {
         display: none;
     }
 
-    h1 {
-        white-space: normal;
+    .logo_header_container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80vw;
+        width: 100vw;
+        left: -7vw;
+        position: relative;
+        background-color: var(--primary-color);
+    }
+
+    .logo_header {
+        height: 70vw;
+        width: auto;
+
     }
 
     .line_header {
@@ -452,7 +469,7 @@ article > p {
         width: calc(100% + 14vw);
     }
 
-    .footer_container {
+    .footer_container > p {
         padding: 2% 5%;
     }
 

@@ -14,7 +14,7 @@ export default function () {
             <div className="oppening_text_element animated-oppening-text">
                 <h3 className="oppening_text_title">Localisation</h3>
                 <p className="oppening_text">Route de la plage 3<br/>
-                1897 Port-Valais, Suisse</p>
+                1897 Le Bouveret, Suisse</p>
             </div>
             <div className="oppening_text_element animated-oppening-text">
                 <h3 className="oppening_text_title">Contact</h3>

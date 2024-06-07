@@ -70,6 +70,7 @@ input::placeholder, textarea::placeholder, option {
     background-color: var(--secondary-color);
     filter: opacity(0.5);
     border: none;
+    border-radius: 0;
 }
 
 .form_left, .form_right{

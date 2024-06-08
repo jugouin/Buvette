@@ -400,19 +400,19 @@ article > p {
 
     .oppening_img {
         display: inline;
-        opacity: 0.3;
+       /* opacity: 0.3; */
         position: absolute;
-        z-index: -1;
+        /*z-index: -1;*/
         right: 0;
-        width: 100vw;
-        height: auto;
+        width: auto;
+        height: 90vh;
         margin-top: 0;
     }
 
     .oppening_text_section {
         display: flex;
         flex-direction: column;
-        margin-top: 5vw;
+        margin-top: 90Vh;
         padding-top: 10%;
        /* box-shadow: 2px 2px 80px var(--primary-color); */
     }

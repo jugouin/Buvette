@@ -414,7 +414,7 @@ article > p {
         flex-direction: column;
         margin-top: 5vw;
         padding-top: 10%;
-        box-shadow: 2px 2px 80px var(--primary-color);
+       /* box-shadow: 2px 2px 80px var(--primary-color); */
     }
 
     .oppening_text, .oppening_container {

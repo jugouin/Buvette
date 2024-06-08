@@ -8,7 +8,7 @@ export default function () {
         <div className="oppening_text_section">
             <div className="oppening_text_element animated-oppening-text">
                 <h3 className="oppening_text_title">Ouverture</h3>
-                <p className="oppening_text">Du mercredi au dimanche 8h à 22h<br/>
+                <p className="oppening_text">Du mercredi au dimanche 8h-22h<br/>
                 Soirée spéciale tous les vendredis</p>
             </div>
             <div className="oppening_text_element animated-oppening-text">

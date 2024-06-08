@@ -15,10 +15,15 @@
     background-color: var(--primary-color);
     border: none;
     cursor: pointer;
+    text-wrap: nowrap;
 }
 
 .calendar {
     padding: 0 20px 20px;
+}
+
+.current-date {
+    text-wrap: nowrap;
 }
 
 .calendar > ul {

@@ -27,13 +27,13 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-    margin: 0px 10px 10px 10px;
+    margin: 0px 15px;
     position: relative;
 }
 
 textarea {
     min-height: 70px;
-    width: calc(100% + 30px);
+  /*  width: calc(100% + 30px);*/
 }
 
 input::placeholder, textarea::placeholder, option {
@@ -41,7 +41,7 @@ input::placeholder, textarea::placeholder, option {
     color: var(--accent-color);
 }
 
-.form_element > label::before {
+/* .form_element > label::before {
     border: var(--border-thin-style);
     bottom: 20px;
     content: "";
@@ -51,6 +51,7 @@ input::placeholder, textarea::placeholder, option {
     top: 0px;
     z-index: -1;
 }
+*/ 
 
 .form_right > .form_element > label::before {
     right: -10px;
@@ -78,9 +79,14 @@ input::placeholder, textarea::placeholder, option {
     margin-bottom: 20px;
 }
 
+.form_right {
+    margin-left: 20px;
+}
+
 .submit_btn {
     flex: 50%;
     flex-basis: 100%;
+    margin-left: 20px;
 }
 
 .submit_btn > button {

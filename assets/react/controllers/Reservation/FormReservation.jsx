@@ -23,7 +23,7 @@ const ReservationForm = ({ evening }) => {
     }, [formData.adults, formData.children]);
 
     const adultsNb = [];
-    for (let i = 0; i <= 20; i++) {
+    for (let i = 0; i <= 15; i++) {
         adultsNb.push(<option key={i} value={i}>{i}</option>);
     }
 

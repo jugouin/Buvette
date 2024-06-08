@@ -11,10 +11,10 @@ export default function Admin(props) {
     
   return <div>
     <h3>Bonjour Stéfanie !</h3>
-    <div class="d-flex justify-content-end">
+    <div class="d-flex justify-content-start">
       <a href="/home" class="btn btn-outline-secondary my-4">Retour</a>
     </div>
-    <Table reservations={reservations} />
+    <Table allReservations={reservations} />
     <img src={image} alt="backgroundImage" className='background_img' />
     <Footer/>
   </div>

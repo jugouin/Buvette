@@ -15,17 +15,17 @@ class EveningType extends AbstractType
         $builder
             ->add('date', null, [
                 'widget' => 'single_text',
+                'required' => true,
             ])
             ->add('menu')
             ->add('music', null, [
-                'label' => 'musique',
+                'label' => 'Musique',
+                'required' => true,
             ])
             ->add('cancelled', CheckboxType::class, [
                 'label'    => 'Soirée annulée',
                 'required' => false,
-                'data'     => false,
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

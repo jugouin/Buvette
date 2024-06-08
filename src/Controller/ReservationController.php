@@ -74,14 +74,12 @@ class ReservationController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_reservation_delete', methods: ['POST'])]
-    public function delete(Request $request, Reservation $reservation, EntityManagerInterface $entityManager): Response
+    #[Route('/{id}', name: 'app_reservation_delete', methods: ['DELETE'])]
+    public function delete(Reservation $reservation, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$reservation->getId(), $request->getPayload()->get('_token'))) {
-            $entityManager->remove($reservation);
-            $entityManager->flush();
-        }
+        $entityManager->remove($reservation);
+        $entityManager->flush();
 
-        return $this->redirectToRoute('app_reservation_index', [], Response::HTTP_SEE_OTHER);
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }

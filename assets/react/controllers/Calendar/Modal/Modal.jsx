@@ -23,6 +23,7 @@ export default function BasicModal({evening, onDateSelect}) {
 
   const handleDateSelect = () => {
     onDateSelect(date);
+    
     handleClose();
   };
 

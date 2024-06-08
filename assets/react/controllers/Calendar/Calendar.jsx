@@ -40,7 +40,7 @@ export default function Calendar({ evening, onDateChange }) {
 
     for (let i = 1; i <= lastDateOfMonth; i++) {
       const currentDate = new Date(currentYear, currentMonth, i).toDateString();
-      const isSelectable = eveningDates.includes(currentDate); // Vérifiez si la date est une date de soirée disponible
+      const isSelectable = eveningDates.includes(currentDate);
 
       const isToday = i === date.getDate() && currentMonth === date.getMonth() && currentYear === date.getFullYear();
       const isSelected = selectedDate && selectedDate.getFullYear() === currentYear && selectedDate.getMonth() === currentMonth && selectedDate.getDate() === i;

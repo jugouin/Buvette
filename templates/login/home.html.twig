@@ -7,6 +7,7 @@
     {% if app.user %}
         <div class="m-3">
             <h1>Bonjour Stéfanie</h1>
+            <a href="{{ path('app_react') }}" class="btn btn-outline-secondary my-4">Retour</a>
             <div class="d-flex flex-column">
                 <a class="text-decoration-none btn btn-outline-info p-2 px-4 m-2" href="{{ path('admin') }}">Voir les réservations</a>
                 <a class="text-decoration-none btn btn-outline-info p-2 px-4 m-2" href="{{ path('app_evening_new') }}">Créer un évènement</a>

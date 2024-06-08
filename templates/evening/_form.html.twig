@@ -1,11 +1,18 @@
 {{ form_start(form, {'attr': {'class': 'w-50 mx-auto'}}) }}
     {% for child in form %}
         {% if not loop.last %}
-            <div class="mb-2">
-                {{ form_label(child) }}
-                {{ form_widget(child, {'attr': {'class': 'form-control p-2'}}) }}
-            </div>
-        {% endif %}
+            {% if child.vars.name != 'cancelled' %}
+                <div class="mb-2">
+                    {{ form_label(child) }}
+                    {{ form_widget(child, {'attr': {'class': 'form-control p-2'}}) }}
+                </div>
+            {% else %}
+                <div class="mb-2 form-check">
+                    {{ form_widget(child, {'attr': {'class': 'form-check-input'}}) }}
+                    {{ form_label(child, null, {'label_attr': {'class': 'form-check-label'}}) }}
+                </div>
+            {% endif %}
+         {% endif %}
     {% endfor %}
     <button class="btn btn-info">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}

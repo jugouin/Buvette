@@ -1,8 +1,6 @@
 import React from "react";
 import image from './img_cocktail.png';
-import menu from './menuHS.png';
-
-//import menu from './menuBS.png';
+import menu from './menu.png';
 
 export default function () {
     const openPDF = () => {

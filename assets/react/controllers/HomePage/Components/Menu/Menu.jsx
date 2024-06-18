@@ -1,6 +1,7 @@
 import React from "react";
 import image from './img_cocktail.png';
 import menu from './menuHS.png';
+
 //import menu from './menuBS.png';
 
 export default function () {

@@ -32,6 +32,10 @@ class Evening
     #[ORM\Column(type: Types::BOOLEAN)]
     private ?bool $cancelled = false;
 
+    #[ORM\Column(type: Types::BOOLEAN)]
+    private ?bool $full = false;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -81,6 +85,17 @@ class Evening
     public function setCancelled(string $cancelled): static
     {
         $this->cancelled = $cancelled;
+        return $this;
+    }
+
+    public function getFull(): ?bool
+    {
+        return $this->full;
+    }
+
+    public function setFull(string $full): static
+    {
+        $this->full = $full;
         return $this;
     }
 }

@@ -41,7 +41,7 @@ class Reservation
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $remarks = null;
-
+    
     public function getId(): ?int
     {
         return $this->id;

@@ -15,6 +15,7 @@
                 <th>Menu</th>
                 <th>Musique</th>
                 <th>Annulée</th>
+                <th>Complet</th>
                 <th></th>
             </tr>
         </thead>
@@ -26,6 +27,12 @@
                     <td>{{ evening.music }}</td>
 
                     {% if evening.cancelled  == 1 %}
+                        <td>Oui</td>
+                    {% else %}
+                        <td>Non</td>
+                    {% endif %}
+
+                    {% if evening.full  == 1 %}
                         <td>Oui</td>
                     {% else %}
                         <td>Non</td>

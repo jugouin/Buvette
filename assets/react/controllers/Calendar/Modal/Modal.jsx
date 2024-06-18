@@ -37,9 +37,15 @@ export default function BasicModal({evening, onDateSelect}) {
         aria-describedby="modal-modal-description"
       >
         <Box className="modal_box" onClick={handleClose}>
-          {evening.cancelled ? (
-            <Typography id="modal-modal-description" sx={{ mt: 2, mb: 2 }} color="error">Soirée annulée</Typography>
-          ) : (
+        {evening.cancelled ? (
+          <Typography id="modal-modal-description" sx={{ mt: 2, mb: 2 }} color="error">
+            Soirée annulée
+          </Typography>
+        ) : evening.full ? (
+          <Typography id="modal-modal-description" sx={{ mt: 2, mb: 2 }} color="error">
+            Soirée complète
+          </Typography>
+        ) : (
           <>
             <Typography id="modal-modal-title" variant="h6" component="h2" className="modal_title">{date}</Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2, mb: 2 }}>Menu proposé: {evening.menu}</Typography>

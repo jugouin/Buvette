@@ -25,6 +25,10 @@ class EveningType extends AbstractType
             ->add('cancelled', CheckboxType::class, [
                 'label'    => 'Soirée annulée',
                 'required' => false,
+            ])
+            ->add('full', CheckboxType::class, [
+                'label'    => 'Soirée complète',
+                'required' => false,
             ]);
     }
 

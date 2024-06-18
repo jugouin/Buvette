@@ -16,6 +16,26 @@ function TableReservation({ allReservations }) {
     setReservations(reservations.filter(reservation => reservation.id !== id));
   };
 
+  const handleDownload = async (date) => {
+    try {
+      const response = await axios.get(`/download/${date}`, {
+        responseType: 'blob',
+      });
+
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+  
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'reservation.csv');
+      document.body.appendChild(link);
+      link.click();
+  
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Erreur lors du téléchargement du fichier CSV', error);
+    }
+  };
+
   const dateReservation = reservations.reduce((acc, reservation) => {
     const date = reservation.date.split('T')[0];
     const existingEntry = acc.find(entry => entry.date === date);
@@ -43,7 +63,7 @@ function TableReservation({ allReservations }) {
         </TableHead>
         <TableBody>
           {dateReservation.map(({ id, date, reservation, persons, menu }) => (
-            <Row key={id} date={date} reservation={reservation} persons={persons} menu={menu} onDelete={handleDelete} />
+            <Row key={id} date={date} reservation={reservation} persons={persons} menu={menu} onDelete={handleDelete} onDownload={handleDownload}/>
           ))}
         </TableBody>
       </Table>

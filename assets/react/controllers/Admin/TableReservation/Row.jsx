@@ -13,7 +13,7 @@ import TableBody from '@mui/material/TableBody';
 import Button from '@mui/material/Button';
 import { format } from 'date-fns';
 
-function Row({ reservation, date, persons, menu, onDelete }) {
+function Row({ reservation, date, persons, menu, onDelete, onDownload }) {
   const [open, setOpen] = React.useState(false);
   const formattedDate = format(new Date(date), 'dd/MM/yyyy');
 
@@ -52,7 +52,11 @@ function Row({ reservation, date, persons, menu, onDelete }) {
                     <TableCell sx={{ fontWeight: 'bold' }} align="right">Adulte(s)</TableCell>
                     <TableCell sx={{ fontWeight: 'bold' }} align="right">Enfant(s)</TableCell>
                     <TableCell sx={{ fontWeight: 'bold' }} align="right">Menu(s)</TableCell>
-                    <TableCell></TableCell>
+                    <TableCell sx={{ fontWeight: 'bold' }} align="right">
+                      <Button onClick={() => onDownload(date)} variant="outlined" sx={{color: 'black'}}>
+                          Télécharger
+                        </Button>
+                    </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
